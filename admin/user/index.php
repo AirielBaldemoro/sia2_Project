@@ -28,10 +28,17 @@ foreach($user->fetch_array() as $k =>$v){
 					<input type="text" name="username" id="username" class="form-control" value="<?php echo isset($meta['username']) ? $meta['username']: '' ?>" required  autocomplete="off">
 				</div>
 				<div class="form-group">
-					<label for="password">Password</label>
-					<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off">
-					<small><i>Leave this blank if you dont want to change the password.</i></small>
-				</div>
+    <label for="password">Password Input</label>
+    <div class="input-group">
+        <input type="password" name="password" id="password" class="form-control" value="" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" title="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="togglePassword"><i class="fas fa-eye"></i></button>
+        </div>
+    </div>
+    <small><i>Leave this blank if you don't want to change the password.</i></small>
+</div>
+
+
 				<div class="form-group">
 					<label for="" class="control-label">Avatar</label>
 					<div class="custom-file">
@@ -74,6 +81,17 @@ foreach($user->fetch_array() as $k =>$v){
 			$('#cimg').attr('src', "<?php echo validate_image(isset($meta['avatar']) ? $meta['avatar'] :'') ?>");
 		}
 	}
+
+	document.getElementById("togglePassword").addEventListener("click", function() {
+    console.log("Button clicked");
+    var passwordField = document.getElementById("password");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+});
+
 	$('#manage-user').submit(function(e){
 		e.preventDefault();
 		start_loader()
@@ -93,6 +111,7 @@ foreach($user->fetch_array() as $k =>$v){
 					end_loader()
 				}
 			}
+		
 		})
 	})
 

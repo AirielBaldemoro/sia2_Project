@@ -1,4 +1,4 @@
-<h1>WELCOME TO TINDAHAN NI JUAN</h1>
+<h1>Welcome to SmartSari</h1>
 <hr>
 <div class="row">
           <div class="col-12 col-sm-4 col-md-4">
