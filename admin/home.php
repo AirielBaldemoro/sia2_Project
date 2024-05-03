@@ -1,4 +1,4 @@
-<h1>Welcome to SmartSari</h1>
+<!-- <h1>Welcome to SmartSari</h1> -->
 <hr>
 <div class="row">
           <div class="col-12 col-sm-4 col-md-4">
@@ -76,7 +76,7 @@
       <div class="carousel-inner h-100">
           <?php foreach($files as $k => $img): ?>
           <div class="carousel-item  h-100 <?php echo $k == 0? 'active': '' ?>">
-              <img class="d-block w-100  h-100" style="object-fit:contain" src="<?php echo $img ?>" alt="">
+              <img class="d-block w-100  h-350" style="object-fit:contain" src="<?php echo $img ?>" alt="">
           </div>
           <?php endforeach; ?>
       </div>

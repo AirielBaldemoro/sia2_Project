@@ -507,6 +507,10 @@ progress {
   font-weight: 300;
 }
 
+.custom-bg-color {
+  background-color: white;
+}
+
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
